@@ -2,9 +2,12 @@
 
 # Informe de Optimización de Base de Datos - E-Shopify
 
-**Curso:** Diseño de Bases de Datos  
+**Curso:** Diseño de Bases de Datos
+
 **Actividad:** Optimización del rendimiento de la base de datos
-**Fecha:** Febrero 2026  
+
+**Fecha:** Febrero 2026
+
 **Estudiantes:** Luis Flórez Pareja & Yhoan Mosquera Peñaloza  
 
 ---

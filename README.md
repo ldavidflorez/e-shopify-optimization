@@ -1,8 +1,13 @@
+# Universidad Tecnológica de Bolívar
+
 # E-Shopify Database Optimization Project
 
 **Curso:** Diseño de Bases de Datos
+
 **Actividad:** Optimización del rendimiento de la base de datos
+
 **Fecha:** Febrero 2026  
+
 **Estudiantes:** Luis Flórez Pareja & Yhoan Mosquera Peñaloza 
 
 ## 📁 Estructura del Proyecto
