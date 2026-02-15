@@ -1,0 +1,30 @@
+# Archivos temporales y de resultados
+*.log
+*.tmp
+*.bak
+
+# Resultados de benchmarks (opcional - descomentar si no quieres subirlos)
+# results/*.csv
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Entornos virtuales Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Docker
+.dockerignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+logs/
+*.log

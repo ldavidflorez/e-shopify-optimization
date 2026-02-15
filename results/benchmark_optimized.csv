@@ -1,0 +1,10 @@
+Operación/Consulta,Tiempo (ms),Filas,Descripción
+Consulta 1,3,506,Buscar productos de la categoría "Electrónica"
+Consulta 2,0,1013,Obtener el número total de pedidos
+Operación 1,0,0,Agregar un nuevo producto
+Operación 2,1,0,Actualizar el precio de un producto
+Consulta 3,3,10,Obtener detalles de pedidos con productos
+Consulta 4,7,550,Calcular promedio de calificaciones por producto
+Consulta 5,3,52,Reporte de ingresos por vendedor
+Consulta lenta,1,121,Búsqueda de productos por nombre (LIKE)
+Operación DELETE,1,-,Eliminar producto de prueba

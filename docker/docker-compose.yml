@@ -1,0 +1,61 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: e-shopify-db
+    environment:
+      POSTGRES_DB: e_shopify_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: e-shopify-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "8080:80"
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+  benchmark:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.benchmark
+    container_name: e-shopify-benchmark
+    depends_on:
+      - postgres
+    environment:
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=e_shopify_db
+    restart: "no"
+    command: ["python", "script_benchmark.py"]
+
+  populate:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.benchmark
+    container_name: e-shopify-populate
+    depends_on:
+      - postgres
+    environment:
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=e_shopify_db
+    restart: "no"
+    command: ["python", "populate_db.py"]
+
+volumes:
+  postgres_data:

@@ -1,0 +1,9 @@
+FROM python:3.9-slim
+
+WORKDIR /app
+
+COPY scripts/populate_db.py scripts/script_benchmark.py ./
+
+RUN pip install psycopg2-binary faker
+
+# No default CMD, will be overridden by docker-compose
